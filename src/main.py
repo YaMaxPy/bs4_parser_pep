@@ -108,7 +108,6 @@ def pep(session):
             continue
         sibling_soup = BeautifulSoup(response.text, 'lxml')
         status_tag = sibling_soup.find(string='Status')
-        print(status_tag)
         status_on_peps_page = status_tag.parent.find_next_sibling().text
         count_of_statuses[status_on_peps_page] = count_of_statuses.get(
             status_on_peps_page, 0) + 1
