@@ -118,8 +118,7 @@ def pep(session):
                 f'Cтатус в карточке: {status_on_peps_page}\n'
                 f'Ожидаемые статусы: {EXPECTED_STATUS[status_on_main_page]}'
             )
-    for k, v in count_of_statuses.items():
-        results.append((k, v))
+    results.extend(count_of_statuses.items())
     results.append(('Total', len(pep_rows)))
     return results
 
